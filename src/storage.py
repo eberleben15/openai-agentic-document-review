@@ -1,16 +1,17 @@
-# storage.py
 import faiss
 import numpy as np
-import pickle
 import os
+import pickle
 
 INDEX_PATH = "embeddings.index"
 DATA_PATH = "doc_data.pkl"
 
 def initialize_index(dimension: int = 1536):
     if os.path.exists(INDEX_PATH):
-        return faiss.read_index(INDEX_PATH)
-    return faiss.IndexFlatL2(dimension)
+        index = faiss.read_index(INDEX_PATH)
+    else:
+        index = faiss.IndexFlatL2(dimension)
+    return index
 
 def save_embedding(index, embedding: np.ndarray, metadata: dict):
     embeddings, data = load_data()
