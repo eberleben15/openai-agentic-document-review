@@ -6,7 +6,7 @@ from embedding import get_embedding
 from storage import initialize_index, save_embedding, load_data
 from rag import answer_query
 
-DOCUMENTS_FOLDER = "../documents"
+DOCUMENTS_FOLDER = "documents"
 
 def ingest_documents():
     index = initialize_index()

@@ -1,5 +1,6 @@
 # extractor.py
 import openai
+from openai.error import RateLimitError
 import json
 import time
 from config import OPENAI_API_KEY
@@ -36,7 +37,7 @@ def extract_structured_info(text: str, model: str = "gpt-3.5-turbo") -> dict:
     except json.JSONDecodeError as jde:
         print(f"JSON decoding failed: {jde}")
         return {}
-    except openai.error.RateLimitError:
+    except RateLimitError:
         print("Rate limit exceeded, retrying in 10 seconds...")
         time.sleep(10)
         return extract_structured_info(text, model)
