@@ -134,3 +134,5 @@ MIT License © 2024
 	•	OpenAI Python SDK
 	•	Facebook FAISS
 	•	PyMuPDF
+
+Case Law documents obtained from: https://law.justia.com/cases/
