@@ -1,0 +1,6 @@
+openai
+PyMuPDF
+python-dotenv
+tiktoken
+faiss-cpu
+numpy
